@@ -9,6 +9,30 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+    exclude:
+      - "bin/cache/**"
+      - "dev/conductor/lib/proto/*"
+
+    language:
+        strict-casts: true
+        strict-raw-types: true
+        strict-inference: true
+        
+    strong-mode:
+        implicit-casts: true
+        implicit-dynamic: true
+        
+    errors:
+      missing_required_param: ignore
+      todo: info
+      invalid_assignment: warning
+      unnecessary_import: warning
+      missing_return: error
+      dead_code: error
+      unnecessary_null_comparison: error
+      deprecated_member_use_from_same_package: error
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
@@ -22,6 +46,20 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
+    prefer_mixin: true
+    avoid_print: true  
+    prefer_single_quotes: true  
+    lowercase_with_underscores: true
+    comment_references: true
+    control_flow_in_finally: true
+    no_duplicate_case_values: true
+    no_logic_in_create_state: true
+    avoid_unnecessary_containers: true
+    unnecessary_const: true
+    package_names: true 
+    secure_pubspec_urls: true
+    void_checks: true
+    prefer_const_constructors_in_immutables: false
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
