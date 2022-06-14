@@ -27,8 +27,8 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () async {
                   var reques = await RequesApi(
                           route:
-                              'https://osded.cloud.invgate.net/api/v1/breakingnews.all')
-                      .get();
+                              'https://pau.osde.com.ar/api/v1/user.by?email=facundo.rodriguez@ctl.com.ar')
+                      .tomar();
 
                   setState(() {
                     show = reques.toString();
