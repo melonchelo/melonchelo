@@ -1,3 +1,4 @@
+import 'package:app/services/api.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,6 +11,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    String show = '';
     return Scaffold(
       appBar: AppBar(title: const Text('Osde')),
       body: SafeArea(
@@ -20,8 +22,19 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Osde'),
+              Text(show),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  var reques = await RequesApi(
+                          route:
+                              'https://osded.cloud.invgate.net/api/v1/breakingnews.all')
+                      .get();
+
+                  setState(() {
+                    show = reques.toString();
+                  });
+                  print(reques);
+                },
                 child: const Text('Login'),
               ),
             ],
@@ -30,5 +43,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
 }
