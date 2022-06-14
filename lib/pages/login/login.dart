@@ -39,6 +39,10 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Text(show.isEmpty ? 'ASHODA' : show),
             Text(count.toString()),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Go to dashboard'),
+            )
           ],
         ),
       ),
