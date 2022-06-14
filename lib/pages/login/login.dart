@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                 var reques = await RequesApi(
                         route:
                             'https://pau.osde.com.ar/api/v1/user.by?email=facundo.rodriguez@ctl.com.ar')
-                    .tomar();
+                    .get();
 
                 setState(() {
                   show = reques['name'].toString();
